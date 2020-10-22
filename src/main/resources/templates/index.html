@@ -1,80 +1,39 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<!-- Required meta tags-->
-	<meta charset="utf-8"/>
-	<meta name="viewport"
-		content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui, viewport-fit=cover"/>
-	<meta name="apple-mobile-web-app-capable" content="yes"/>
-	<!-- Color theme for statusbar (Android only) -->
-	<meta name="theme-color" content="#2196f3"/>
-	<!-- Your app title -->
-	<title>My App</title>
-	<!-- Path to Framework7 Library Bundle CSS -->
-	<link rel="stylesheet" href="resource/css/framework7.bundle.min.css"/>
+	<link rel="stylesheet" href="resource/css/onsenui.css">
+	<link rel="stylesheet" href="resource/css/onsen-css-components.min.css">
+	<script src="resource/js/onsenui.min.js"></script>
+	<script src="resource/js/jquery.min.js"></script>
 </head>
 <body>
-	<!-- App root element -->
-	<div id="app">
-
-		<!-- Your main view, should have "view-main" class -->
-		<div class="view view-main">
-			<!-- Initial Page, "data-name" contains page name -->
-			<div data-name="home" class="page">
-
-				<!-- Top Navbar -->
-				<div class="navbar">
-					<div class="navbar-bg"></div>
-					<div class="navbar-inner">
-						<div class="title">Awesome App</div>
-					</div>
-				</div>
-
-				<!-- Bottom Toolbar -->
-				<div class="toolbar toolbar-bottom">
-					<div class="toolbar-inner">
-						<!-- Toolbar links -->
-						<a href="#" class="link">Link 1</a> <a href="#" class="link">Link
-							2</a>
-					</div>
-				</div>
-
-				<!-- Scrollable page content -->
-				<div class="page-content">
-					<p>Page content goes here</p>
-					<!-- Link to another page -->
-					<a href="/about/">About app</a>
-				</div>
-			</div>
+	<ons-page>
+		<div style="text-align: center; margin-top: 200px">
+			<p>
+				<ons-input id="username" placeholder="Username" modifier="underbar"></ons-input>
+			</p>
+			<p>
+				<ons-input id="password" placeholder="Password" type="password"
+					modifier="underbar"> </ons-input>
+			</p>
+			<p>
+				<ons-button id='sign_in_btn'>Sign in</ons-button>
+			</p>
 		</div>
-	</div>
-	<!-- Path to Framework7 Library Bundle JS-->
-	<script type="text/javascript"
-		src="resource/js/framework7.bundle.min.js"></script>
+	</ons-page>
 	<script>
-		var app = new Framework7({
-			// App root element
-			root : '#app',
-			// App Name
-			name : 'My App',
-			// App id
-			id : 'com..example.myapp',
-			// Enable swipe panel
-			panel : {
-				swipe : true,
-			},
-			// Add default routes
-			routes : [ {
-				name : 'about',
-				path : '/about/',
-				url : './about.html',
-			}, {
-				name : 'index',
-				path : '/index/',
-				url : './index.html',
-			} ]
-		});
-		var mainView = app.views.create('.view-main');
+	$(function(){ 
+		$('#sign_in_btn').on('click', function(e) { 
+			const username = document.querySelector('#username').value;
+			const password = document.querySelector('#password').value;
+			
+			if (username === 'user' && password === 'pass') {
+			  ons.notification.alert('Correct!');
+			} else {
+			  ons.notification.alert('Wrong username/password combination');
+			}
+		}) 
+	});
 	</script>
 </body>
 </html>

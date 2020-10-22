@@ -11,8 +11,4 @@ public class SimplePageController {
     return "index";
   }
 
-  @RequestMapping({"about.html"})
-  public String aboutPage() {
-    return "about";
-  }
 }

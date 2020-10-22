@@ -20,6 +20,7 @@
 // Wait for the deviceready event before using any of Cordova's device APIs.
 // See https://cordova.apache.org/docs/en/latest/cordova/events/events.html#deviceready
 document.addEventListener('deviceready', onDeviceReady, false);
+document.getElementById("click-to-start").addEventListener("click", startHybridApp);
 
 function initInAppBrowser(url) {
     var target = "_blank";
@@ -31,5 +32,9 @@ function initInAppBrowser(url) {
 function onDeviceReady() {
     console.log('Running cordova-' + cordova.platformId + '@' + cordova.version);
     document.getElementById('deviceready').classList.add('ready');
+    startHybridApp();
+}
+
+function startHybridApp() {
     window.open = initInAppBrowser("https://saleschat.tech:444/hybrid/");
 }

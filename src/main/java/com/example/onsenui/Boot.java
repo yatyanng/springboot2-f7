@@ -1,4 +1,4 @@
-package com.example.springboot2F7;
+package com.example.onsenui;
 
 
 import org.slf4j.Logger;

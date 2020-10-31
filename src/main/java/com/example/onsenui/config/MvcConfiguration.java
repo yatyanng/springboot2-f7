@@ -1,4 +1,4 @@
-package com.example.springboot2F7.config;
+package com.example.onsenui.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;

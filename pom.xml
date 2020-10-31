@@ -44,7 +44,7 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<mainClass>com.example.springboot2F7.Boot</mainClass>
+					<mainClass>com.example.onsenui.Boot</mainClass>
 				</configuration>
 				<executions>
 					<execution>
